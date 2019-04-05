@@ -1,6 +1,5 @@
 # talks
 
-## 运行
 ### 在线渲染
 https://go-talks.appspot.com/github.com/voidint/talks/hello-golang/hello-golang.slide
 
