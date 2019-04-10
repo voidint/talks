@@ -1,0 +1,24 @@
+$ tree -d -L 4 ./
+./
+├── bin                     
+│   ├── linux_amd64
+│   └── windows_386
+├── pkg                     
+│   └── darwin_amd64
+└── src                     // 源代码目录
+    └── idcos.io
+        └── cloudboot
+            ├── agent
+            ├── build
+            ├── cmd        // 程序入口（main函数）
+            ├── config
+            ├── i18n
+            ├── job
+            ├── logger
+            ├── middleware
+            ├── model
+            ├── plugin
+            ├── server
+            ├── utils
+            ├── vendor      // 第三方依赖库
+            └── xmdb

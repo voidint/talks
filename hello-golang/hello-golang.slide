@@ -2,22 +2,24 @@ Hello Golang
 Go语言入门
 
 voidint
-voidint@126.com
 
 * 简介
 
 Go（又称Golang）是Google开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。
 
-.link https://golang.org 官网（科学上网）
-.link https://golang.google.cn/ 官方镜像
+.link https://golang.org
+.link https://golang.google.cn
 
 .image img/golang_logo.png 300 450 
 
 * 优点
-- 无依赖
+- 语言特性少易学习
+- 静态编译无依赖
 - 编译、启动、运行速度快
+- 组合而非继承
+- 函数支持多返回值
 - 原生支持并发
-.image img/goroutine.jpg
+.image img/goroutine.jpg 250 750
 
 * 环境变量
 - GOROOT（go语言安装包根目录）
@@ -25,13 +27,22 @@ Go（又称Golang）是Google开发的一种静态强类型、编译型、并发
 - GOPATH（工作空间）
     $ export GOPATH=/Users/voidint/workspace/go:/Users/voidint/workspace/idcos/cloudboot
 
+- CGO_ENABLED（CGO开关）
+    $ CGO_ENABLED=0 go build -ldflags '-extldflags "-static"'
+
 - GOOS、GOARCH（交叉编译）
     $ GOOS=linux GOARCH=amd64 go build
 
 - ...
 
 * 目录结构
-.image img/dir_tree.jpg 500 400
+.code dir.txt
+
+* 编辑器/IDE
+.link https://marketplace.visualstudio.com/itemdetails?itemName=ms-vscode.Go Visual Studio Code
+.link https://github.com/fatih/vim-go vim
+.link https://www.jetbrains.com/go/ GoLang 
+.link https://atom.io/packages/go-plus Atom
 
 
 * 工具链
@@ -43,7 +54,7 @@ Go（又称Golang）是Google开发的一种静态强类型、编译型、并发
 - go install（编译并安装）
     $ cd ${YOUR_WORKSPACE} && go install
 - godoc（文档服务）
-    $ godoc -http localhost:9090
+    $ godoc -http :9090
 - ...
 
 * 依赖管理
@@ -56,9 +67,25 @@ Go（又称Golang）是Google开发的一种静态强类型、编译型、并发
     $ go mod
 
 * 标准库
+- encoding/json
+- errors
+- fmt
+- net/http
+- os
+- os/exec
+- path/filepath
+- reflect
+- strings
+- sync
+- time
+- ...
 
-* 写一个第三方依赖库
+* 实战
+- 需求：实现简易版的ls命令
+    $ ls [-l] [-a] [文件|目录]
 
-* 写一个简单的命令行程序
+.code ls.txt
+- 参考实现 
+.link https://github.com/voidint/gdemo/blob/master/cmd/ls/main.go
 
-* 写一个简单的REST API服务
+ 
