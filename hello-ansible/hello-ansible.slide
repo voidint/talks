@@ -30,6 +30,8 @@ Ansible附带了很多的模块，通过模块可以控制系统的资源 ，像
 - [[https://docs.ansible.com/ansible/latest/modules/ping_module.html][ping]]
 - [[https://docs.ansible.com/ansible/latest/modules/command_module.html][command]]
 - [[https://docs.ansible.com/ansible/latest/modules/shell_module.html][shell]]
+- [[https://docs.ansible.com/ansible/latest/modules/raw_module.html][raw]]
+- [[https://docs.ansible.com/ansible/latest/modules/setup_module.html][setup]]
 - [[https://docs.ansible.com/ansible/latest/modules/copy_module.html][copy]]
 - [[https://docs.ansible.com/ansible/latest/modules/service_module.html][service]]
 - ...
