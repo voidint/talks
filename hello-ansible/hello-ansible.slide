@@ -1,0 +1,90 @@
+Hello Ansible
+Ansible简单入门
+
+voidint
+
+* 简介（1）
+
+In computing, Ansible is an open-source software provisioning, configuration management, and application-deployment tool. It runs on many Unix-like systems, and can configure both Unix-like systems as well as Microsoft Windows. It includes its own declarative language to describe system configuration.
+
+It was written by Michael DeHaan and acquired by Red Hat in 2015. Unlike competing products, Ansible is agentless - temporarily connecting remotely via SSH or remote PowerShell to do its tasks.
+
+- [[https://www.ansible.com/][官网]]
+- [[https://github.com/ansible/ansible][Github主页]]
+
+
+* 简介（2）
+
+.image img/ansible_orig.jpg 
+
+* Inventory 
+
+Ansible可同时操作属于一个组的多台主机，组和主机之间的关系通过inventory文件配置。
+
+默认的文件路径为/etc/ansible/hosts，可通过配置文件修改该路径。
+.code inventory.txt
+
+* Modules
+Ansible附带了很多的模块，通过模块可以控制系统的资源 ，像服务、包管理、文件或执行系统命令。
+
+- [[https://docs.ansible.com/ansible/latest/modules/ping_module.html][ping]]
+- [[https://docs.ansible.com/ansible/latest/modules/command_module.html][command]]
+- [[https://docs.ansible.com/ansible/latest/modules/shell_module.html][shell]]
+- [[https://docs.ansible.com/ansible/latest/modules/copy_module.html][copy]]
+- [[https://docs.ansible.com/ansible/latest/modules/service_module.html][service]]
+- ...
+
+* 配置文件-ansible.cfg 
+[[https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg][官方配置示例]]
+
+.code ansible.cfg
+
+读取顺序
+
+- 当前目录下的ansible.cfg 
+- ANSIBLE_CONFIG
+- 用户家目录下的.ansible.cfg
+- /etc/ansible/ansible.cfg
+
+
+
+* 如何完成任务？
+Ansible提供两种方式去完成任务,一种是Ad-Hoc命令，另一种是Ansible Playbook。
+
+前者可以解决一些简单的任务, 后者解决较复杂的任务。两者的关系很类似shell命令和shell脚本之间的关系。
+
+- Ad-Hoc
+
+- Ansible Playbook 
+.code get_ilo_log.yml
+
+* 命令行
+ansible <host-pattern> [options]
+
+- -m: module name to execute (default=command)
+- -a: module arguments
+- -i: specify inventory host path or comma separated host list
+- -u: connect as this user (default=None)
+- -k: ask for connection password
+- -c: connection type to use (default=smart)
+- -e: set additional variables as key=value or YAML/JSON, if filename prepend with @
+- -f: specify number of parallel processes to use (default=5)
+- -v: verbose mode (-vvv for more, -vvvv to enable connection debugging)
+
+* 开发中的注意点
+- ssh连接方式下请提前安装sshpass程序
+- 使用-e选项传递ssh密码而非将ssh密码写入inventory文件
+- 不要依赖全局的ansible配置
+    1、设置ansible-playbook进程的PATH环境变量
+    2、设置ansible-playbook进程的ANSIBLE_STDOUT_CALLBACK环境变量
+    3、生成所需的inventory文件
+    4、生成所需的yml文件（ansible playbook）
+
+
+* 参考
+[[https://en.wikipedia.org/wiki/Ansible_(software)][维基百科]]
+[[https://ansible-tran.readthedocs.io/en/latest/][Ansible中文权威指南]]
+[[https://getansible.com/][Ansible入门]]
+
+
+ 

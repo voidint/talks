@@ -1,0 +1,6 @@
+---
+- gather_facts: False
+  hosts: hosts
+  tasks:
+    - name: get ilo log
+      raw: show  -a /system1/log1
