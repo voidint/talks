@@ -1,0 +1,20 @@
+type Kernel struct{}
+func (k *Kernel) Name() (string, error) {
+	v, err := exec.Command("uname", "-s").Output()
+	if err != nil {
+		return "", err
+	}
+	return strings.TrimSpace(string(v)), nil
+}
+func (k *Kernel) Release() (string, error) {
+	v, err := exec.Command("uname", "-r").Output()
+	if err != nil {
+		return "", err
+	}
+	return strings.TrimSpace(string(v)), nil
+}
+func (k *Kernel) String() string {
+	name, _ := k.Name()
+	release, _ := k.Release()
+	return fmt.Sprintf("%s %s", name, release)
+}
