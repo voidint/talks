@@ -1,0 +1,69 @@
+# Docker Registry
+
+voidint
+2020.07
+voidint@126.com
+
+## registry
+![关系图](img/docker.png)
+
+## reference
+
+```shell
+$ docker images
+REPOSITORY                                  TAG                 IMAGE ID            CREATED             SIZE
+registry.idcos.com/cloudboot/proxy-server   20200624            582708d65926        13 days ago         306MB
+registry                                    2                   2d4f4b5309b1        2 weeks ago         26.2MB
+mysql                                       5.7                 9cfcce23593a        4 weeks ago         448MB
+docs/docker.github.io                       latest              32ed84d97e30        4 weeks ago         1GB
+redis                                       5.0.8               975fe4b9f798        2 months ago        98.3MB
+portainer/portainer                         1.23.2              2869fc110bf7        3 months ago        78.6MB
+swaggerapi/swagger-ui                       3.18.2              1891a250374d        22 months ago       27.7MB
+```
+- [语法](https://pkg.go.dev/github.com/docker/distribution@v2.7.1+incompatible/reference?tab=doc)
+- 关键词：reference、repository、tag、digest、registry server(domain)
+
+
+## distribution
+- 标准：[OCI Distribution Specification](https://github.com/opencontainers/distribution-spec)
+- 实现
+    - [docker](https://github.com/docker/distribution)
+    - [harbor](https://github.com/goharbor/harbor)
+- demo
+    ```shell
+    $ docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+    $ docker pull alpine:3.12
+
+    $ docker tag alpine:3.12 localhost:5000/alpine:3.12
+
+    $ docker push localhost:5000/alpine:3.12
+    ```
+
+## distribution: 存储驱动
+- 内置
+    - inmemory
+    - filesystem
+    - s3
+    - azure
+    - swift
+    - oss
+    - gcs
+- 自定义
+
+
+## Registry API V1
+![docker registry api v1](img/docker-registry-v1.jpg)
+
+## Registry API V2
+![docker registry api v1](img/docker-registry-v2.jpg)
+
+## Registry API V2: authentication
+![registry auth](img/v2-registry-auth.png)
+
+## Registry API V2: manifest
+- schema1
+- schema2
+
+
+

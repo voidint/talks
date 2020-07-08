@@ -1,0 +1,12 @@
+$ docker images
+REPOSITORY                                  TAG                 IMAGE ID            CREATED             SIZE
+registry.idcos.com/cloudboot/proxy-server   20200624            582708d65926        13 days ago         306MB
+registry                                    2                   2d4f4b5309b1        2 weeks ago         26.2MB
+mysql                                       5.7                 9cfcce23593a        4 weeks ago         448MB
+docs/docker.github.io                       latest              32ed84d97e30        4 weeks ago         1GB
+106.13.182.234:5678/alpine                  1.1                 a24bb4013296        5 weeks ago         5.57MB
+alpine                                      latest              a24bb4013296        5 weeks ago         5.57MB
+localhost:5000/alpine                       1.1                 a24bb4013296        5 weeks ago         5.57MB
+redis                                       5.0.8               975fe4b9f798        2 months ago        98.3MB
+portainer/portainer                         1.23.2              2869fc110bf7        3 months ago        78.6MB
+swaggerapi/swagger-ui                       3.18.2              1891a250374d        22 months ago       27.7MB
