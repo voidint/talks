@@ -4,6 +4,7 @@
 
 - [《Hello Golang》](https://go-talks.appspot.com/github.com/voidint/talks/hello-golang/hello-golang.slide)
 - [《Hello Ansible》](https://go-talks.appspot.com/github.com/voidint/talks/hello-ansible/hello-ansible.slide)
+- [《Docker Registry》](https://go-talks.appspot.com/github.com/voidint/talks/docker-registry/registry.slide)
 
 ### 本地渲染
 - 下载本工程至本地
